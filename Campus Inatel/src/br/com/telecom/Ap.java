@@ -1,11 +1,13 @@
 package br.com.telecom;
 
+import br.com.excecoes.TomboInvalidoException;
+
 public class Ap extends InterfaceTelecom{
 
     String wifi;
     double alcance;
     
-    public Ap(String tombo, int np, String marca, String wifi, double alcance) {
+    public Ap(String tombo, int np, String marca, String wifi, double alcance) throws TomboInvalidoException{
         super(tombo, np, marca);
         this.wifi = wifi;
         this.alcance = alcance;
@@ -29,7 +31,13 @@ public class Ap extends InterfaceTelecom{
 
     @Override
     public void imprimir() {
-       System.out.println(tombo + " " + np + " " + marca + " " + wifi + " " + alcance);
+       System.out.println(getTombo() + " " + np + " " + marca + " " + wifi + " " + alcance);
+       
+    }
+    @Override
+    public String toString(){ 
+         String S = getTombo() + " " + np + " " + marca + " " + wifi + " " + alcance;
+       return S;
     }
     
     

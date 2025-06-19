@@ -1,0 +1,6 @@
+123456 45 tplink cat5e sc
+234567 48 tplink monomodo lc
+234890 48 fiberfodasse monomodo LC
+345678 3 cisco wifi6 250.0
+268765 32 Starlink Monomodo LC
+381234 3 tplink wifi7 324.90034

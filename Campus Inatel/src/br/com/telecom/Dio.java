@@ -1,5 +1,7 @@
 package br.com.telecom;
 
+import br.com.excecoes.TomboInvalidoException;
+
 public class 
 
 
@@ -8,7 +10,7 @@ Dio extends InterfaceTelecom{
     String fibra;
     String conector;
     
-    public Dio(String tombo, int np, String marca, String fibra, String conector) {
+    public Dio(String tombo, int np, String marca, String fibra, String conector) throws TomboInvalidoException{
         super(tombo, np, marca);
         this.fibra = fibra;
         this.conector = conector;
@@ -28,7 +30,15 @@ Dio extends InterfaceTelecom{
 
     @Override
     public void imprimir() {
-       System.out.println(tombo + " " + np + " " + marca + " " + fibra + " " + conector);
+
+       System.out.println(getTombo() + " " + np + " " + marca + " " + fibra + " " + conector);
+       
+       
+    }
+    @Override
+    public String toString(){ 
+        String S = getTombo() + " " + np + " " + marca + " " + fibra + " " + conector;
+       return S;
     }
 
     

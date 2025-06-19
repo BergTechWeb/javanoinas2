@@ -1,12 +1,13 @@
 package br.com.telecom;
 
-public class Switch extends InterfaceTelecom{
+import br.com.excecoes.TomboInvalidoException;
 
-       
+public class Switch extends InterfaceTelecom {
+
     int mbps;
     String tipo;
 
-    public Switch(String tombo, int np, String marca, int mbps, String tipo) {
+    public Switch(String tombo, int np, String marca, int mbps, String tipo) throws TomboInvalidoException {
         super(tombo, np, marca);
         this.mbps = mbps;
         this.tipo = tipo;
@@ -28,10 +29,15 @@ public class Switch extends InterfaceTelecom{
         this.tipo = tipo;
     }
 
-      @Override
+    @Override
     public void imprimir() {
-       System.out.println(tombo + " " + np + " " + marca + " " + mbps + " " + tipo);
+        System.out.println(getTombo() + " " + np + " " + marca + " " + mbps + " " + tipo);
+
+    }
+    @Override
+    public String toString(){ 
+        String S = getTombo() + " " + np + " " + marca + " " + mbps + " " + tipo;
+       return S;
     }
 
-    
 }
